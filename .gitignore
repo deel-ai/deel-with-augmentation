@@ -1,0 +1,72 @@
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# distribution / packaging
+build/
+lib/
+lib64/
+dist/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+eggs/
+.eggs/
+*.egg
+*.egg-info
+
+# data
+data/
+datasets/
+
+# virtual env
+venv/
+.venv
+*env/
+vuong_dev_env/
+
+# ide
+.idea
+.vscode
+
+# output
+output/
+
+#weights
+weights/
+*.pth
+
+# ignore image data
+*.png
+*.jpg
+data/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+*test*.sh
+
+# mkdocs documentation
+/site
+
+# notebooks and lab
+# notebooks/
+# *.ipynb
+# lab/

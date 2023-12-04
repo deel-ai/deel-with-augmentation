@@ -1,0 +1,12 @@
+docutils
+Markdown
+mkdocs
+mkdocs-material
+numkdoc
+mknotebooks
+Pygments
+pymdown-extensions
+pylint
+pytest
+pytest-cov
+tox
