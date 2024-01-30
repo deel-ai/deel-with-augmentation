@@ -15,9 +15,7 @@ def test_train_output():
     batch_size = [3 , 6]
     channel = [3 , 3]
     height, width = (256 , 256)
-
-    vgg_path = ('/home/vuong.nguyen/vuong/augmentare/augmentare/'
-                'methods/style_transfer/model/vgg_normalised_flow.pth')
+    vgg_path = None
     for i in range(2):
         model = STYLEFLOW(in_channel=3, n_flow=15, n_block=2, vgg_path = vgg_path,
                             affine=False, conv_lu=False, keep_ratio=0.8, device=device)
