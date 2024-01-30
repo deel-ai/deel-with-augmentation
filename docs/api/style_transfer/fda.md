@@ -2,16 +2,16 @@
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1qbsmllY18RyHGNNaCn5zPNcRu6Pe_S_t?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/style_transfer/fda.py) |
+📰 [Paper](https://arxiv.org/abs/2004.05498)
 
 ## NETWORK ARCHITECTURE : FDA
 Simplified domain adaptation via style transfer thanks to the Fourier transformation. The FDA does not need deep networks for style transfer and adversarial training.
 
-<img src="/home/vuong.nguyen/vuong/augmentare/docs/assets/fda_view.png" alt="Picture" style="display: block; margin: 0 auto" />
+<img src="../images/fda.png" width="100%" alt="Picture" style="display: block; margin: 0 auto" />
 
 The scheme of the proposed Fourier domain adaptation method:
     <ul> <li> <span style="color:gold"> Step 1: </span> <span> Apply FFT to source and target images. </span> </li>
@@ -34,8 +34,8 @@ src_in_trg = model.fda_source_to_target(beta=0.01)
 
 ## Notebooks
 
-- [**FDA**: Tutorial]()
-- [**FDA**: Apply in EuroSAT]()
+- [**FDA**: Tutorial](https://colab.research.google.com/drive/1qbsmllY18RyHGNNaCn5zPNcRu6Pe_S_t?authuser=3)
+- [**FDA**: Apply in EuroSAT](https://colab.research.google.com/drive/1LCLevUaAERtI-K6xYSHCAuJ00lAPjFBe?authuser=3)
 
 {{augmentare.methods.style_transfer.fda.FDA}}
 
