@@ -15,9 +15,7 @@ def test_train_output():
     batch_size = [200 , 400]
     channel = [3 , 3]
     height, width = (256 , 256)
-    vgg_path = ('/home/vuong.nguyen/vuong/augmentare/augmentare/'
-                'methods/style_transfer/model/vgg_normalised_ccpl.pth')
-
+    vgg_path = None
     for i in range(2):
         model = CCPL(training_mode= "art", vgg_path=vgg_path, device=device)
 
