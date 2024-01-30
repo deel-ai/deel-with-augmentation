@@ -233,9 +233,9 @@ class CDCGAN(BaseGAN):
         Parameters
         ----------
         subset_a
-            Torch.tensor or Dataset
+            Torch.tensor or Dataset on which to train the CDCGAN
         num_epochs
-            The number of epochs you want to train your CDCGan
+            The number of epochs you want to train your CDCGAN
         batch_size
             Training batch size
 
