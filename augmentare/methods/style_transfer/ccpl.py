@@ -119,7 +119,7 @@ class ModelCCPL(nn.Module):
                                     device=self.device) # indices of top left vectors
             s_ids = s_ids[:int(min(num_s, s_ids.shape[0]))]
             ch_ids = torch.div(s_ids, (width - 2), rounding_mode='trunc') + 1 # centors
-            cw_ids = (s_ids % (width - 2) + 1)
+            cw_ids = s_ids % (width - 2) + 1
             c_ids = (ch_ids * width + cw_ids).repeat(8)
             delta = [dic[i // num_s] for i in range(8 * num_s)]
             delta = torch.tensor(delta).to(self.device)
@@ -333,7 +333,7 @@ class CCPL(nn.Module):
         style_iter = iter(style_set)
         loss_train = []
         for i in tqdm(range(max_iter)):
-            adjust_learning_rate(optimizer, iteration_count=i, lr=1e-4, lr_decay=5e-5)
+            adjust_learning_rate(optimizer, iteration_count=i, learning_rate=1e-4, lr_decay=5e-5)
             content_images = next(content_iter).to(self.device)
             style_images = next(style_iter).to(self.device)
             loss_c, loss_s, loss_ccp = self.model(content_images, style_images, num_s, num_l)
