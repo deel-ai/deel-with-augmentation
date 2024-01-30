@@ -1,12 +1,12 @@
-# ProGAN (Progressive Growing of GANS)
+# Progressive Growing of GANS (ProGAN)
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1lYkKxrJ6Bfz0VspQpi6TtLVcYXw-tZVH?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/gan/progan.py) |
+📰 [Paper](https://arxiv.org/abs/1710.10196)
 
 Progressive Growing GAN also known as ProGAN is an extension of the GAN training process that allows training generating models with stability that can produce large-high-quality images.
 
@@ -22,7 +22,7 @@ It basically includes 4 steps:
  - Equalized Learning Rate
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="50%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/progan.gif">
+  <p align="center" width="100%"> <img width="100%" src="../images/progan.gif">
   <p align="center"> Simplified view of ProGAN <a href="https://towardsdatascience.com/progan-how-nvidia-generated-images-of-unprecedented-quality-51c98ec2cbd2"> (Image source) </a>
 </div>
 
@@ -122,13 +122,13 @@ img_list = gan.generate_samples(
 
 ## Notebooks
 
-- [**CycleGAN**: Tutorial]()
-- [**CycleGAN**: Apply in CelebA]()
+- [**CycleGAN**: Tutorial](https://colab.research.google.com/drive/1lYkKxrJ6Bfz0VspQpi6TtLVcYXw-tZVH?authuser=3)
+- [**CycleGAN**: Apply in CelebA](https://colab.research.google.com/drive/14GZnuvUij3UOMNFcQr6Fu_WVg8VeZXRx?authuser=3)
+
+{{augmentare.methods.gan.progan.PROGAN}}
 
 {{augmentare.methods.gan.progan.PROGANGenerator}}
 
 {{augmentare.methods.gan.progan.PROGANDiscriminator}}
-
-{{augmentare.methods.gan.progan.PROGAN}}
 
 [Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196) by Tero Karras & al (2018).
