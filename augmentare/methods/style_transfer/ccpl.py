@@ -280,7 +280,8 @@ class CCPL(nn.Module):
         super().__init__()
 
         new_vgg = vgg
-        new_vgg.load_state_dict(torch.load(vgg_path))
+        if vgg_path is not None:
+            new_vgg.load_state_dict(torch.load(vgg_path))
         if training_mode == "art":
             new_decoder = decoder
             new_vgg =  nn.Sequential(*list(new_vgg.children())[:31])
