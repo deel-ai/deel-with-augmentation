@@ -1,20 +1,20 @@
-# DCGAN (Deep Convolutional GAN)
+# Deep Convolutional GAN (DCGAN)
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1AtfDRKREmkRibpJsztJahedY5746jWh5?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/gan/dcgan.py) |
+📰 [Paper](https://arxiv.org/abs/1511.06434)
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="55%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/dcgan.png">
+  <p align="center" width="100%"> <img width="100%" src="../images/dcgan.png">
   <p align="center"> DCGAN Generator
 </div>
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="75%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/full_dcgan.png">
+  <p align="center" width="100%"> <img width="100%" src="../images/full_dcgan.png">
   <p align="center"> Full DCGAN Architecture
 </div>
 
@@ -98,14 +98,14 @@ img_list = gan.generate_samples(
 
 ## Notebooks
 
-- [**DCGAN**: Tutorial]()
-- [**DCGAN**: Apply in EuroSAT]()
-- [**DCGAN**: Apply in CelebA]()
+- [**DCGAN**: Tutorial](https://colab.research.google.com/drive/1AtfDRKREmkRibpJsztJahedY5746jWh5?authuser=3)
+- [**DCGAN**: Apply in EuroSAT](https://colab.research.google.com/drive/1xyqKdJgG_2BLcW4GrLdHMzZUILXLySm6?authuser=3)
+- [**DCGAN**: Apply in CelebA](https://colab.research.google.com/drive/1yJ8r9X2g5Y9vSJavxwePRiCirOSzg3og?authuser=3)
+
+{{augmentare.methods.gan.dcgan.DCGAN}}
 
 {{augmentare.methods.gan.dcgan.DCGANGenerator}}
 
 {{augmentare.methods.gan.dcgan.DCGANDiscriminator}}
-
-{{augmentare.methods.gan.dcgan.DCGAN}}
 
 [Unsupervised Representation Learning With Deep Convolutional Generative Aversarial Networks](https://arxiv.org/abs/1511.06434) by Radford & al (2015).
