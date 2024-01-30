@@ -1,15 +1,15 @@
-# CGAN (Conditional GAN)
+# Conditional GAN (CGAN)
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1PRgSd3HfaNs1VtgKMYuqwJ5pMfr2GrTV?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/gan/cgan.py) |
+📰 [Paper](https://arxiv.org/abs/1411.1784)
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="80%" height="80%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/cgan_view.png">
+  <p align="center" width="100%"> <img width="100%" height="100%" src="../images/cgan.png">
   <p align="center"> Conditional GAN Architecture
 </div>
 
@@ -87,12 +87,12 @@ img_list = gan.generate_samples(
 
 ## Notebooks
 
-- [**CGAN**: Tutorial]()
+- [**CGAN**: Tutorial](https://colab.research.google.com/drive/1PRgSd3HfaNs1VtgKMYuqwJ5pMfr2GrTV?authuser=3)
+
+{{augmentare.methods.gan.cgan.CGAN}}
 
 {{augmentare.methods.gan.cgan.CGANGenerator}}
 
 {{augmentare.methods.gan.cgan.CGANDiscriminator}}
-
-{{augmentare.methods.gan.cgan.CGAN}}
 
 [Conditional Generative Adversarial Nets](https://arxiv.org/abs/1411.1784) by Mehdi Mirza & Simon Osindero (2014).
