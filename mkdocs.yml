@@ -8,19 +8,29 @@ nav:
   - Home: index.md
   - Experiments:
     - CelebA:
-      - Summary: experiments/celeba/Bias_CelebA.ipynb
+      - Summary: api/experiments_summary/Bias_CelebA.ipynb
+    - EuroSAT:
+      - Summary: api/experiments_summary/Bias_EuroSAT.ipynb
   - GAN methods:
-      - DCGAN: api/gan/dcgan.md
+      - Deep Convolutional GAN (DCGAN): api/gan/dcgan.md
+      - Conditional GAN (CGAN): api/gan/cgan.md
+      - Conditional Deep Convolutional GAN (CDCGAN): api/gan/cdcgan.md
+      - Cycle GAN: api/gan/cyclegan.md
+      - Progressive Growing of GANS (ProGAN): api/gan/progan.md
   - Style Transfer:
-      - Neural Style Transfer: api/style_transfer/nst.md
+      - Fourier Domain Adaptation (FDA): api/style_transfer/fda.md
+      - Adaptive Instance Normalization (AdaIN): api/style_transfer/adain.md
+      - Neural Neighbor Style Transfer (NNST): api/style_transfer/nnst.md
+      - Style Flow: api/style_transfer/styleflow.md
+      - Contrastive Coherence Preserving Loss for Versatile Style Transfer (CCPL): api/style_transfer/ccpl.md
 
 theme:
   name: "material"
-  # logo: assets/x_logo.png
-  # favicon: assets/x_logo.png
+  logo: assets/aug_logo_wo_bg.png
+  favicon: assets/aug_logo_wo_bg.png
   palette:
     - scheme: default
-      primary: white
+      primary: dark
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
@@ -35,7 +45,10 @@ theme:
 plugins:
   - numkdoc
   - search
-  - mknotebooks
+  - plotly
+  - mknotebooks:
+      # enable_default_jupyter_cell_styling: false
+      # enable_default_pandas_dataframe_styling: false
 
 markdown_extensions:
   - footnotes
@@ -55,8 +68,13 @@ markdown_extensions:
       custom_checkbox: true
       clickable_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: plotly
+          class: mkdocs-plotly
+          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
 
 extra_css:
   - css/custom.css
@@ -67,4 +85,4 @@ extra_javascript:
   - js/custom.js
 
 repo_name: "deel-ai/augmantare"
-repo_url: "https://forge.deel.ai/Fair/augmantare"
+repo_url: "https://github.com/deel-ai/deel-with-augmentation"
