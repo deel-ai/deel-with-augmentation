@@ -544,7 +544,8 @@ class STYLEFLOW(nn.Module):
         self.model = Glow(in_channel, n_flow, n_block, affine=affine, conv_lu=conv_lu)
         self.model.to(device)
         encoder = vgg
-        encoder.load_state_dict(torch.load(vgg_path))
+        if vgg_path is not None:
+            encoder.load_state_dict(torch.load(vgg_path))
         self.encoder = Net(encoder, keep_ratio=keep_ratio)
         self.encoder.to(device)
         self.device = device
