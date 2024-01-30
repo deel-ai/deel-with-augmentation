@@ -2,19 +2,19 @@
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1WbLJ63-qQ3zLh8BMu-jQwdYhc_7iB07W?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/style_transfer/ccpl.py) |
+📰 [Paper](https://link.springer.com/chapter/10.1007/978-3-031-19787-1_11)
 
 ## NETWORK ARCHITECTURE : CCPL
 
-<img src="/home/vuong.nguyen/vuong/augmentare/docs/assets/ccpl1.png" alt="Picture" style="display: block; margin: 0 auto" />
+<img src="../images/ccpl1.png" width="100%" alt="Picture" style="display: block; margin: 0 auto" />
 
 <span style="font-family:Roboto; color:gold"> Inspirations for CCPL: </span> <span style="font-family:Roboto"> Regions denoted by red boxes from the first frame `(RA or R'A)` have the same location with corresponding patches in the second frame wrapped in a yellow box `(RB or R'B)`. `RC and R'C` (in the blue boxes) are cropped from the first frame but their style aligns with `RB and R'B`. The difference between two patches is denoted by `D` (for example, D(RA, RB)). Mutual information between `D(RA, RC)` and `D(R'A, R'C)`, `(D(RA, RB) and D(R'A, R'B))` is encouraged to be maximized to preserve consistency from the content source. </span> </li>
 
-<img src="/home/vuong.nguyen/vuong/augmentare/docs/assets/ccpl2.png" alt="Picture" style="display: block; margin: 0 auto" />
+<img src="../images/ccpl2.png" width="100%" alt="Picture" style="display: block; margin: 0 auto" />
 
 <span style="font-family:Roboto; color:gold"> Details of CCPL: </span> <span style="font-family:Roboto"> `Cf` and `Gf` represent the encoded features of a specific layer of encoder `E`. `⊖` denotes vector subtraction, and `SCE` stands for softmax cross-entropy. The yellow dotted lines illustrate how the positive pair is produced. </span>
 
@@ -42,8 +42,8 @@ gen_image = model.ccpl_generate(
 
 ## Notebooks
 
-- [**CCPL**: Tutorial]()
-- [**CCPL**: Apply in EuroSAT]()
+- [**CCPL**: Tutorial](https://colab.research.google.com/drive/1WbLJ63-qQ3zLh8BMu-jQwdYhc_7iB07W?authuser=3)
+- [**CCPL**: Apply in EuroSAT](https://colab.research.google.com/drive/1KwmrpTAX0QjSC4XI_SHRMqnlh-aGQ3Yx?authuser=3)
 
 {{augmentare.methods.style_transfer.ccpl.CCPL}}
 
