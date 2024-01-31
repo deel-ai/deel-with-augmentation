@@ -214,7 +214,8 @@ class NNST(nn.Module):
             return cnn.forward(x_in, inds=y_in, concat=z_in)
 
         # Stylization
-        torch.cuda.synchronize()
+        if self.device is "cuda":
+            torch.cuda.synchronize()
 
         gen_image = self.stylization(
             phi,
