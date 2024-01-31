@@ -303,7 +303,7 @@ def replace_features(src, ref):
             # Get chunck of content features, compute corresponding portion
             # distance matrix, and store nearest style feature to each content
             # feature
-            src_flat = to_device(src_flat_all[b_i:e_i, :])
+            src_flat = src_flat_all[b_i:e_i, :].to(device)
             d_mat = pairwise_distances_cos_center(ref_flat, src_flat)
             _, nn_inds = torch.min(d_mat, 0)
             del d_mat  # distance matrix uses lots of memory, free asap
