@@ -1,0 +1,1246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="api/experiments_summary/Bias_CelebA/">
+      
+      
+      <link rel="icon" href="assets/aug_logo_wo_bg.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Augmentare</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/custom.css">
+    
+      <link rel="stylesheet" href="css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="dark" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#experiment-results" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Augmentare" class="md-header__button md-logo" aria-label="Augmentare" data-md-component="logo">
+      
+  <img src="assets/aug_logo_wo_bg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Augmentare
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="dark" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deel-ai/deel-with-augmentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deel-ai/augmantare
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Augmentare" class="md-nav__button md-logo" aria-label="Augmentare" data-md-component="logo">
+      
+  <img src="assets/aug_logo_wo_bg.png" alt="logo">
+
+    </a>
+    Augmentare
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deel-ai/deel-with-augmentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deel-ai/augmantare
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Experiment Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-augmentation-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐍 The Augmentation Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      👀 See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙏 Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍🎓 Creators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Experiments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CelebA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            CelebA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/experiments_summary/Bias_CelebA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    EuroSAT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            EuroSAT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/experiments_summary/Bias_EuroSAT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GAN methods
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            GAN methods
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/gan/dcgan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deep Convolutional GAN (DCGAN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/gan/cgan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditional GAN (CGAN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/gan/cdcgan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conditional Deep Convolutional GAN (CDCGAN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/gan/cyclegan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cycle GAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/gan/progan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Progressive Growing of GANS (ProGAN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Style Transfer
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Style Transfer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/style_transfer/fda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Domain Adaptation (FDA)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/style_transfer/adain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adaptive Instance Normalization (AdaIN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/style_transfer/nnst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Neighbor Style Transfer (NNST)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/style_transfer/styleflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Style Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/style_transfer/ccpl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contrastive Coherence Preserving Loss for Versatile Style Transfer (CCPL)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Experiment Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-augmentation-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐍 The Augmentation Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      👀 See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙏 Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creators" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍🎓 Creators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Home</h1>
+
+<div align="center">
+<img align="center" alt="Banner" src="./assets/augmentare_banner.png" width="95%"/>
+</div>
+<div align="center">
+<a href="#">
+<img src="https://img.shields.io/badge/Python-3.8, 3.9, 3.10-efefef"/>
+</a>
+<!-- <a href="https://github.com/deel-ai/deel-with-augmentation/actions/workflows/python-lints.yml">
+        <img alt="PyLint" src="https://github.com/deel-ai/deel-with-augmentation/actions/workflows/python-lints.yml/badge.svg">
+    </a>
+    <a href="https://github.com/deel-ai/deel-with-augmentation/actions/workflows/python-tests-torch.yml">
+        <img alt="Tests torch" src="https://github.com/deel-ai/deel-with-augmentation/actions/workflows/python-tests-torch.yml/badge.svg"> -->
+
+<!-- <a href="https://github.com/deel-ai/xplique/actions/workflows/python-publish.yml">
+        <img alt="Pypi" src="https://github.com/deel-ai/xplique/actions/workflows/python-publish.yml/badge.svg">
+    </a> -->
+<a href="#">
+<img src="https://img.shields.io/badge/License-MIT-efefef"/>
+</a>
+</div>
+<p><br/></p>
+<p align="center">
+<b>DEEL With Augmentation</b> is a repository which implements several ML techniques to generatively augment the data and that analyzes those methods from a Fairness perspective.
+</p>
+<p>This library includes two types of ML approaches to generate synthetic data to augment your training dataset: Generative Adversarial Networks (GANs) and Style Transfer (ST).</p>
+<div class="figure">
+<p align="center" height="150%" width="100%"> <img height="150%" src="./assets/original_view.png" width="100%"/> </p>
+</div>
+<p>The main focus of this work is to analyze the ability of those methods to efficiently adress bias issues. More specifically, we wanted to check that augmenting a minority group (<em>i.e.</em> a group that is under represented) with those approaches could alleviate the drop in performance for the sensitive group that is usually observable when training a model on the unaugmented dataset. We made a number of experiments on the EuroSat dataset where the minority group is the satellite images with a <em>blue veil</em> and on the CelebA dataset on which multiple minority groups could be defined.</p>
+<h2 id="experiment-results">🧪 Experiment Results<a class="headerlink" href="#experiment-results" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1Apawd1NXjoXweD7gEvTOoP6GRgdex8xz?authuser=3"><strong>DEEL With Eurosat Bias</strong></a> experiment's summary</li>
+<li><a href="https://colab.research.google.com/drive/1XZIJY2xIc0sxnqmytSNq6X1LIZLxMfiT?authuser=3"><strong>DEEL With CelebA Bias</strong></a> experiment's summary</li>
+</ul>
+<details class="example">
+<summary>Experiments on Eurosat</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Bias in EuroSAT</strong></th>
+<th style="text-align: center;">Notebook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Summary</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1Apawd1NXjoXweD7gEvTOoP6GRgdex8xz?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fourier Domain Adaptation (FDA)</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1LCLevUaAERtI-K6xYSHCAuJ00lAPjFBe?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Style Flow</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1DUzOwHdQCgiTf2wA7Da0U06dkRba5Kgg?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Contrastive Coherence Preserving Loss for Versatile Style Transfer (CCPL)</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1KwmrpTAX0QjSC4XI_SHRMqnlh-aGQ3Yx?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Adaptive Instance Normalization (AdaIN)</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/10jBKY2sIVxBFt3ENHUFQIRm0Z6EfBII8?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Neural Neighbor Style Transfer (NNST)</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1ZPj0TXa6FxVvxcrmXhXIjhomPOSEefAF?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">GAN + ST</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1xyqKdJgG_2BLcW4GrLdHMzZUILXLySm6?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">XAI Attributions</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1znjtaQzYZQ5znhf_fqJEv_nMIyX9lobS?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">XAI Metrics</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1hcLuG_KwFQ89qtqcsWcXBjt4WcSbN93i?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+</tbody>
+</table>
+<p><div class="figure">
+<p align="center" width="100%"> <img src="./assets/fda_eurosat.png" width="100%"/>
+<p align="center"> An example of a case where we used FDA to change the style of highway images.
+</p></p></div></p>
+</details>
+<details class="example">
+<summary>Experiments on CelebA</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Bias in CelebA</strong></th>
+<th style="text-align: center;">Notebook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Summary</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1XZIJY2xIc0sxnqmytSNq6X1LIZLxMfiT?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">OpenCV</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1O1CVEL7bvfwbEC9PypY-szkQtRa1aM6g?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">DCGAN</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1yJ8r9X2g5Y9vSJavxwePRiCirOSzg3og?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">CycleGAN</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/16gbok_6Bls-g_uu_rzeCIDBJQrn77BlK?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">ProGAN</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/14GZnuvUij3UOMNFcQr6Fu_WVg8VeZXRx?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">All methods (including DDPM)</td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1JopH1bXld_NK504pXmPmvg5jN9uyA521?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+</tbody>
+</table>
+<p><div class="figure">
+<p align="center" width="100%"> <img src="./assets/cyclegan_male_gray_2_male_blond.png" width="100%"/>
+<p align="center"> An example of a case where we used CycleGAN to change the hair color of male.
+</p></p></div></p>
+</details>
+<h2 id="the-augmentation-package">🐍 The Augmentation Package<a class="headerlink" href="#the-augmentation-package" title="Permanent link">¶</a></h2>
+<p>In this repository we packaged all the code used for our experiments to allow both: reproducibility and usability as a Python package of the augmentation methods.</p>
+<details class="note">
+<summary>Getting Started</summary>
+<p><strong>Augmentare</strong> requires a version of python higher than 3.7 and several libraries including Pytorch and Numpy. Installation can be done using:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/deel-ai/augmentare.git
+<span class="nb">cd</span><span class="w"> </span>augmentare
+python<span class="w"> </span>setup.py<span class="w"> </span>install
+</code></pre></div>
+<p>Now that Augmentare is installed.</p>
+<p><strong>Generative Adversarial Networks Methods</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Augmentare Imports</span>
+<span class="kn">import</span> <span class="nn">augmentare</span>
+<span class="kn">from</span> <span class="nn">augmentare.methods.gan</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">augmentare.plots.plot_losses</span> <span class="kn">import</span> <span class="n">plot_losses_gan</span>
+<span class="kn">from</span> <span class="nn">augmentare.plots.plot_samples</span> <span class="kn">import</span> <span class="n">plot_image</span>
+</code></pre></div>
+<p>All GANs models share a common API. You can find out more about it <a href="">here</a>.</p>
+<p><strong>Style Transfer Methods</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Augmentare Imports</span>
+<span class="kn">import</span> <span class="nn">augmentare</span>
+<span class="kn">from</span> <span class="nn">augmentare.methods.style_transfer</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">augmentare.plots.plot_losses</span> <span class="kn">import</span> <span class="n">plot_losses</span>
+</code></pre></div>
+<p>All NST models share a common API. You can find out more about it <a href="">here</a></p>
+</details>
+<details class="note">
+<summary>Generative Adversarial Networks</summary>
+<p>The library includes a <code>gan</code> module where various GAN models are available. They all come with explanations, tutorials, and links to official articles:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>GAN Method</strong></th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: center;">Tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Deep Convolutional GAN (DCGAN)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1511.06434">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1AtfDRKREmkRibpJsztJahedY5746jWh5?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Conditional GAN (CGAN)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1411.1784">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1PRgSd3HfaNs1VtgKMYuqwJ5pMfr2GrTV?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Conditional Deep Convolutional GAN (CDCGAN)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1511.06434">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1zCrNaBhhIrdcs_qWPtTgbr4npQXvgipo?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cycle GAN</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1703.10593">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1Y8P5OwgHy2JychYMQxCT9JskBRbfDGuN?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Progressive Growing of GANS (ProGAN)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1710.10196">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1lYkKxrJ6Bfz0VspQpi6TtLVcYXw-tZVH?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>Style Transfer</summary>
+<p>The library includes a <code>style_transfer</code> module where various Style Transfer approaches are available. They all come with explanations, tutorials, and links to official articles:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>ST Method</strong></th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: center;">Tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Fourrier Domain Adaptation (FDA)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/2004.05498">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1qbsmllY18RyHGNNaCn5zPNcRu6Pe_S_t?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Adaptive Instance Normalization (AdaIN)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/1703.06868">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/13kF3YeJL37RkgQwDJm13JvSZrCQkFMad?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Neural Neighbor Style Transfer (NNST)</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/2203.13215">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1qUo6iLj6AzLGJo_JvTv4ZskS-1hzSi4Q?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Style Flow</td>
+<td style="text-align: left;"><a href="https://arxiv.org/abs/2207.01909">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1IqTYUFowVQ3iSqsukLV0DxhVuU9LTr2y?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Contrastive Coherence Preserving Loss for Versatile Style Transfer (CCPL)</td>
+<td style="text-align: left;"><a href="https://link.springer.com/chapter/10.1007/978-3-031-19787-1_11">Paper</a></td>
+<td style="text-align: center;"><a href="https://colab.research.google.com/drive/1WbLJ63-qQ3zLh8BMu-jQwdYhc_7iB07W?authuser=3"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="see-also">👀 See Also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<p>More from the DEEL project:</p>
+<ul>
+<li><a href="https://github.com/deel-ai/xplique">Xplique</a> a Python library exclusively dedicated to explaining neural networks.</li>
+<li><a href="https://github.com/deel-ai/deel-lip">deel-lip</a> a Python library for training k-Lipschitz neural networks on TF.</li>
+<li><a href="https://github.com/deel-ai/deel-torchlip">deel-torchlip</a> a Python library for training k-Lipschitz neural networks on PyTorch.</li>
+<li><a href="https://github.com/deel-ai/influenciae">Influenciae</a> Python toolkit dedicated to computing influence values for the discovery of potentially problematic samples in a dataset.</li>
+<li><a href="https://github.com/deel-ai/LARD">LARD</a> Landing Approach Runway Detection (LARD) is a dataset of aerial front view images of runways designed for aircraft landing phase</li>
+<li><a href="https://github.com/deel-ai/puncc">PUNCC</a> Puncc (Predictive uncertainty calibration and conformalization) is an open-source Python library that integrates a collection of state-of-the-art conformal prediction algorithms and related techniques for regression and classification problems</li>
+<li><a href="https://github.com/deel-ai/oodeel">OODEEL</a> OODeel is a library that performs post-hoc deep OOD detection on already trained neural network image classifiers. The philosophy of the library is to favor quality over quantity and to foster easy adoption</li>
+<li><a href="https://arxiv.org/abs/2103.10529">DEEL White paper</a> a summary of the DEEL team on the challenges of certifiable AI and the role of data quality, representativity and explainability for this purpose.</li>
+</ul>
+<h2 id="acknowledgments">🙏 Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">¶</a></h2>
+<p><img align="right" alt="DEEL Logo" src="./assets/deel_light.png#only-light" width="25%"/>
+<img align="right" alt="DEEL Logo" src="./assets/deel_dark.png#only-dark" width="25%"/>
+This project received funding from the French ”Investing for the Future – PIA3” program within the Artificial and Natural Intelligence Toulouse Institute (ANITI). The authors gratefully acknowledge the support of the <a href="https://www.deel.ai/"> DEEL </a> project.</p>
+<h2 id="creators">👨‍🎓 Creators<a class="headerlink" href="#creators" title="Permanent link">¶</a></h2>
+<p>This repository was developed by <a href="https://github.com/XuanMinhVuongNGUYEN">Vuong NGUYEN</a> as part of his apprenticeship with the <a href="https://www.deel.ai/"> DEEL </a> Team under the supervision of <a href="https://github.com/lucashervier">Lucas Hervier</a> and <a href="https://github.com/Agustin-Picard">Agustin PICARD</a>. He is currently a student in dual engineering degree ModIA program at INSA Toulouse and INP-ENSEEIHT supported by Artificial and Natural Intelligence Toulouse Institute (ANITI).</p>
+<h2 id="license">📝 License<a class="headerlink" href="#license" title="Permanent link">¶</a></h2>
+<p>The package is released under <a href="https://choosealicense.com/licenses/mit"> MIT license</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="js/custom.js"></script>
+      
+    
+  </body>
+</html>
