@@ -2,15 +2,15 @@
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1qUo6iLj6AzLGJo_JvTv4ZskS-1hzSi4Q?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/style_transfer/nnst.py) |
+📰 [Paper](https://arxiv.org/abs/2203.13215)
 
 ## NETWORK ARCHITECTURE : NNST
 
-<img src="/home/vuong.nguyen/vuong/augmentare/docs/assets/nnst.png" alt="Picture" style="display: block; margin: 0 auto" />
+<img src="../images/nnst.png" width="100%" alt="Picture" style="display: block; margin: 0 auto" />
 
 The fast and slow variants of their method, NNST-D, and NNST-Opt, only differ in step 4; mapping from the target features to image pixels. This simplified diagram omits several details for clarity, namely: they apply steps 1-4 at multiple scales, coarse to fine; they repeat steps 1-4 several times at the finest scale; and they only apply step 5 once (optionally) at the very end.
 
@@ -34,8 +34,8 @@ gen_image = model.nnst_generate(
 
 ## Notebooks
 
-- [**NNST**: Tutorial]()
-- [**NNST**: Apply in EuroSAT]()
+- [**NNST**: Tutorial](https://colab.research.google.com/drive/1qUo6iLj6AzLGJo_JvTv4ZskS-1hzSi4Q?authuser=3)
+- [**NNST**: Apply in EuroSAT](https://colab.research.google.com/drive/1ZPj0TXa6FxVvxcrmXhXIjhomPOSEefAF?authuser=3)
 
 {{augmentare.methods.style_transfer.nnst.NNST}}
 

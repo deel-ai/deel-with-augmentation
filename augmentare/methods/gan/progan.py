@@ -312,7 +312,7 @@ class PROGAN(BaseGAN):
         Parameters
         ----------
         subset_a
-            Torch.tensor or Dataset
+            Torch.tensor or Dataset on which to train the ProGAN
         num_epochs
             The number of epochs you want to train your ProGAN
         batch_size

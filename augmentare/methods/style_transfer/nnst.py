@@ -150,7 +150,7 @@ class NNST(nn.Module):
                 target_feats = replace_features(feats_c, feats_s)
 
             # Synthesize output at current resolution using hypercolumn matching
-            s_pyr = optimize_output_im(s_pyr, c_pyr, self.content_im, style_im_tmp,
+            s_pyr = optimize_output_im(s_pyr, c_pyr, style_im_tmp,
                                     target_feats, l_rate, max_iter, scl, phi,
                                     content_loss=content_loss)
 
@@ -160,7 +160,7 @@ class NNST(nn.Module):
 
         # Perform final pass using feature splitting (pass in flip_aug argument
         # because style features are extracted internally in this regime)
-        s_pyr = optimize_output_im(s_pyr, c_pyr, self.content_im, style_im_tmp,
+        s_pyr = optimize_output_im(s_pyr, c_pyr, style_im_tmp,
                                 target_feats, l_rate, max_iter, scl, phi,
                                 final_pass=True, content_loss=content_loss,
                                 flip_aug=flip_aug)
@@ -214,7 +214,8 @@ class NNST(nn.Module):
             return cnn.forward(x_in, inds=y_in, concat=z_in)
 
         # Stylization
-        torch.cuda.synchronize()
+        if self.device == "cuda":
+            torch.cuda.synchronize()
 
         gen_image = self.stylization(
             phi,

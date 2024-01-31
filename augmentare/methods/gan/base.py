@@ -126,7 +126,8 @@ class BaseGAN(ABC):
         Parameters
         ----------
         subset_a
-            Torch.tensor or Dataset on which to train the GAN
+            Torch.tensor or Dataset on which to train the GAN.
+            It is considered the main dataset for all GAN models
         num_epochs
             The number of epochs you want to train your GAN
         num_decay_epochs
@@ -136,7 +137,8 @@ class BaseGAN(ABC):
         batch_size
             Training batch size (optional)
         subset_b
-            The second Torch.tensor or Dataset (optional)
+            The second Torch.tensor or Dataset (optional).
+            It is used when the GAN model works with two datasets, for example the CycleGAN model
 
         Returns
         -------

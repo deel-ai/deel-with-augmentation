@@ -1,12 +1,12 @@
-# CDCGAN (Conditional Deep Convolutional GAN)
+# Conditional Deep Convolutional GAN (CDCGAN)
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1zCrNaBhhIrdcs_qWPtTgbr4npQXvgipo?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/gan/cdcgan.py) |
+📰 [Paper](https://arxiv.org/abs/1511.06434)
 
 
 `Conditional Deep Convolutional GAN` is a conditional GAN that use the same convolution layers as [`DCGAN`]() that is described previously. `CDCGAN` generate more realistic images than `CGAN` thanks to convolutional layers.
@@ -89,12 +89,12 @@ img_list = gan.generate_samples(
 
 ## Notebooks
 
-- [**CDCGAN**: Tutorial]()
+- [**CDCGAN**: Tutorial](https://colab.research.google.com/drive/1zCrNaBhhIrdcs_qWPtTgbr4npQXvgipo?authuser=3)
+
+{{augmentare.methods.gan.cdcgan.CDCGAN}}
 
 {{augmentare.methods.gan.cdcgan.CDCGANGenerator}}
 
 {{augmentare.methods.gan.cdcgan.CDCGANDiscriminator}}
-
-{{augmentare.methods.gan.cdcgan.CDCGAN}}
 
 [Unsupervised Representation Learning With Deep Convolutional Generative Aversarial Networks](https://arxiv.org/abs/1511.06434) by Radford & al (2015).

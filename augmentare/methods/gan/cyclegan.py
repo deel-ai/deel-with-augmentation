@@ -337,13 +337,15 @@ class CYCLEGAN(BaseGAN):
         Parameters
         ----------
         subset_a
-            Torch.tensor or Dataset
+            The first Torch.tensor or Dataset which is the source dataset
+            used to train CycleGAN for image-to-image translation
         num_epochs
             The number of epochs you want to train your CycleGAN
         num_decay_epochs
             The number of epochs to start linearly decaying the learning rate to 0
         subset_b
-            The second Torch.tensor or Dataset
+            The second Torch.tensor or Dataset which is the target dataset
+            used to train CycleGAN for image-to-image translation
 
         Returns
         -------

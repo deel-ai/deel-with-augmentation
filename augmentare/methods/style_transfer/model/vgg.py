@@ -1,3 +1,7 @@
+"""
+This module implements VGG.
+"""
+
 from torch import nn
 
 vgg = nn.Sequential(

@@ -231,9 +231,9 @@ class CGAN(BaseGAN):
         Parameters
         ----------
         subset_a
-            Torch.tensor or Dataset
+            Torch.tensor or Dataset on which to train the CGAN
         num_epochs
-            The number of epochs you want to train your CGan
+            The number of epochs you want to train your CGAN
         num_classes
             Number of classes in dataset
         batch_size

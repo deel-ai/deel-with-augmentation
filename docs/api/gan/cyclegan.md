@@ -2,11 +2,11 @@
 
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="20">
-</sub>[View colab tutorial]() |
+</sub>[View colab tutorial](https://colab.research.google.com/drive/1Y8P5OwgHy2JychYMQxCT9JskBRbfDGuN?authuser=3) |
 <sub>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20">
-</sub>[View source]() |
-📰 [Paper]()
+</sub>[View source](https://github.com/deel-ai/deel-with-augmentation/blob/main/augmentare/methods/gan/cyclegan.py) |
+📰 [Paper](https://arxiv.org/abs/1703.10593)
 
 Have you ever had the dark secret of turning a horse into a zebra? CycleGAN was developed to do just that. Learn how to turn a horse into a zebra and much more.
 
@@ -19,12 +19,12 @@ Forget it because you have CycleGAN. You will build a generator like the Pix2Pix
 Let's look at the image below, which shows the first half of CycleGAN trying to create a fake zebra from a horse. The second half of CycleGAN tries to create a fake horse from a zebra. Both halves include loss of cyclic consistency trying to make the output of the inverting generator match the input of the non-inverting generator.
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="70%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/cyclegan1.jpg">
+  <p align="center" width="100%"> <img width="100%" src="../images/cyclegan1.jpg">
   <p align="center">
 </div>
 
 <div class=figure>
-  <p align="center" width="100%"> <img width="70%" src="/home/vuong.nguyen/vuong/augmentare/docs/assets/cyclegan2.jpg">
+  <p align="center" width="100%"> <img width="100%" src="../images/cyclegan2.jpg">
   <p align="center"> Simplified view of CycleGAN architecture <a href="https://hardikbansal.github.io/CycleGANBlog/"> (Image source) </a>
 </div>
 
@@ -112,13 +112,13 @@ fake_image_a, fake_image_b= gan.generate_samples(
 
 ## Notebooks
 
-- [**CycleGAN**: Tutorial]()
-- [**CycleGAN**: Apply in CelebA]()
+- [**CycleGAN**: Tutorial](https://colab.research.google.com/drive/1Y8P5OwgHy2JychYMQxCT9JskBRbfDGuN?authuser=3)
+- [**CycleGAN**: Apply in CelebA](https://colab.research.google.com/drive/16gbok_6Bls-g_uu_rzeCIDBJQrn77BlK?authuser=3)
+
+{{augmentare.methods.gan.cyclegan.CYCLEGAN}}
 
 {{augmentare.methods.gan.cyclegan.CYCLEGANGenerator}}
 
 {{augmentare.methods.gan.cyclegan.CYCLEGANDiscriminator}}
-
-{{augmentare.methods.gan.cyclegan.CYCLEGAN}}
 
 [Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/abs/1703.10593) by Jun-Yan Zhu & al (2017).

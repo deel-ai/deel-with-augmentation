@@ -30,3 +30,4 @@ class Vgg19Pretrained(nn.Module):
         if output_last_feature:
             return out4
         return out1, out2, out3, out4
+    
