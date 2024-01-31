@@ -283,7 +283,8 @@ def replace_features(src, ref):
     """
     # Move style features to gpu (necessary to mostly store on cpu for gpus w/
     # < 12GB of memory)
-    ref_flat = to_device(flatten_grid(ref))
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    ref_flat = flatten_grid(ref).to(device)
     rplc = []
     for j in range(src.size(0)):
         # How many rows of the distance matrix to compute at once, can be
