@@ -14,7 +14,7 @@ def test_train_output():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     batch_size = [3 , 6]
     channel = [3 , 3]
-    height, width = (256 , 256)
+    height, width = (64 , 64)
     vgg_path = None
     for i in range(2):
         model = STYLEFLOW(in_channel=3, n_flow=15, n_block=2, vgg_path = vgg_path,
@@ -47,7 +47,7 @@ def test_style_flow_generate_output():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     batch_size = [1 , 1]
     channel = [3 , 3]
-    height, width = (128 , 256)
+    height, width = (64 , 128)
     vgg_path = None
     for i in range(2):
         model = STYLEFLOW(in_channel=3, n_flow=15, n_block=2, vgg_path = vgg_path,
